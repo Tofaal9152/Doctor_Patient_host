@@ -3,7 +3,7 @@ import Avater from "../../../../assets/doctor_Logo.png";
 import { FaUserDoctor } from "react-icons/fa6";
 
 
-const Modal = ({ isVisible, onClose, doctor }) => {
+const Modal = ({ isVisible, onClose }) => {
   const [problem, setProblem] = useState("");
   const [appointmentDate, setAppointmentDate] = useState("");
 
@@ -46,16 +46,15 @@ const Modal = ({ isVisible, onClose, doctor }) => {
             alt="Doctor Avatar"
           />
           <h1 className="text-xl flex-wrap font-semibold mt-2 mb-2">
-            {doctor.name}
+            Dr. Md Tofaal Ahmed
           </h1>
-          <p className="text-sm text-[#2a5c83] mb-4">{doctor.specialty}</p>
+          <p className="text-sm text-[#2a5c83] mb-4">Nephrologist</p>
           <div className="mt-3 ">
             <p>
-              Available:{" "}
-              <span className="font-medium">{doctor.availability}</span>
+              Available: <span className="font-medium">Mon - Fri</span>
             </p>
             <p>
-              Hours: <span className="font-medium">{doctor.hours}</span>
+              Hours: <span className="font-medium">8:30 AM - 4:30 PM</span>
             </p>
           </div>
           <form onSubmit={handleSubmit} className="space-y-4 w-full">
@@ -76,9 +75,9 @@ const Modal = ({ isVisible, onClose, doctor }) => {
             <div className="flex items-center justify-center space-x-4">
               <button
                 type="submit"
-                className="bg-[#76c3ed] space-x-2 flex items-center justify-center hover:bg-[#7dcefa] rounded-md px-3 duration-300 py-2 cursor-pointer text-md font-semibold text-white"
+                className="bg-[#76c3ed] space-x-1 flex items-center justify-center hover:bg-[#7dcefa] rounded-md px-3 duration-300 py-2 cursor-pointer text-md font-semibold text-white"
               >
-                <FaUserDoctor size={22} />
+                <FaUserDoctor />
                 <span>Appointment</span>
               </button>
             </div>

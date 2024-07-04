@@ -6,7 +6,6 @@ const Left_Sidebar = () => {
   return (
     <div className={`h-screen bg-gray-gradient2 p-4 border-r`}>
       <div className="flex flex-col ">
-        <br /><br /><br />
         <div
           onClick={() => {
             navigate("/doctor");
@@ -24,7 +23,7 @@ const Left_Sidebar = () => {
           className="bg-white  cursor-pointer border hover:scale-105 duration-300 bg-opacity-20 backdrop-blur-md rounded-md px-3 py-2 mb-1 shadow-md"
         >
           <span className="text-md font-semibold text-[#2a5c83]">
-            Confirmed Appointments
+            My Appointment
           </span>
         </div>
         <div

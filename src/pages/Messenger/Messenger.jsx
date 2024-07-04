@@ -7,8 +7,8 @@ const Messenger = () => {
   const darkMode = useSelector((state) => state.counter.darkMode);
 
   return (
-    <div className="w-[-webkit-fill-available]">
-      <div className={`flex interfont ${darkMode ? "dark" : ""}`}>
+    <div>
+      <div className={`flex relative top-[-4.28rem] interfont ${darkMode ? "dark" : ""}`}>
         <ChatList />
         <MessageContainer />
       </div>

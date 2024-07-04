@@ -1,6 +1,5 @@
 import React from "react";
 import Avater from "../../../../assets/doctor_Logo.png";
-import { convertTimeFormat } from "../../../../commons/functions";
 
 const AppointmentModal = ({ isVisible, onClose, appointment }) => {
   if (!isVisible) {
@@ -28,24 +27,16 @@ const AppointmentModal = ({ isVisible, onClose, appointment }) => {
           </div>
           <img
             className="w-20 h-20 rounded-full object-cover border-2 border-[#53829C]"
-            src={appointment?.doctor?.profile_img}
+            src={Avater}
             alt="Doctor Avatar"
           />
           <h1 className="text-xl flex-wrap font-semibold mt-2 mb-2">
-            {appointment?.doctor?.name}
+            Dr. {appointment.doctorName}
           </h1>
-          <p className="text-sm">{appointment?.doctor?.specialization}</p>
-          <p className="text-sm">
-            From: {convertTimeFormat(appointment?.doctor?.from_time)}
-          </p>
-          <p className="text-sm">
-            To: {convertTimeFormat(appointment?.doctor?.to_time)}
-          </p>
-
-          <p className="text-sm">
-            <span className="underline"> Description:</span> <br />
-            {appointment?.problem_description}
-          </p>
+          <p className="text-sm">Specialty: {appointment.specialty}</p>
+          <p className="text-sm">Date: {appointment.date}</p>
+          <p className="text-sm">Time: {appointment.time}</p>
+          {/* <p className="text-sm">Reason: {appointment.reason}</p> */}
         </div>
       </div>
     </div>

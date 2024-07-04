@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 // Landing Page
-import Landing_page from "./pages/LandingPage/Landing_Page.jsx";
+import Landing_page from './pages/Landing Page/Landing_Page.jsx'
 
 // Patient
 import Patient_LandingPage from "./pages/Patient_Dashboard/Patient_LandingPage.jsx";
@@ -19,20 +19,14 @@ import Medical_Records from "./pages/Doctor_Dashboard/Medical Records/Medical_Re
 import Doctor_profile from "./pages/Doctor_Dashboard/Profile/Profile.jsx";
 import Doctor_Registration from "./pages/Doctor_Registration/Doctor_Registration.jsx";
 // login
-import PatientLogin from "./pages/PatientLogin/PatientLogin.jsx";
+import Login from "./pages/LOG_IN/Login.jsx";
 
 import Messenger from "./pages/Messenger/Messenger.jsx";
-import MessengerDoctor from "./pages/MessengerDoctor/MessengerDoctor.jsx";
 // redux
 import { Provider } from "react-redux";
 import store from "./Redux/store.js";
 // Rect-router-dom
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import DoctorLogin from "./pages/DoctorLogin/DoctorLogin.jsx";
-import {
-  DoctorPrivateRoute,
-  PatientPrivateRoute,
-} from "./commons/PrivateRoutes.jsx";
 
 const router = createBrowserRouter([
   {
@@ -41,101 +35,53 @@ const router = createBrowserRouter([
   },
   {
     path: "/patient",
-    element: (
-      <PatientPrivateRoute>
-        <Patient_LandingPage />
-      </PatientPrivateRoute>
-    ),
+    element: <Patient_LandingPage />,
     children: [
       {
         path: "/patient",
-        element: (
-          <PatientPrivateRoute>
-            <Available_Doctor />{" "}
-          </PatientPrivateRoute>
-        ),
+        element: <Available_Doctor />,
       },
       {
         path: "/patient/profile",
-        element: (
-          <PatientPrivateRoute>
-            <Profile_patient />{" "}
-          </PatientPrivateRoute>
-        ),
+        element: <Profile_patient />,
       },
       {
         path: "/patient/messages",
-        element: (
-          <PatientPrivateRoute>
-            <Messenger />{" "}
-          </PatientPrivateRoute>
-        ),
+        element: <Messenger />,
       },
       {
         path: "/patient/medicalreport",
-        element: (
-          <PatientPrivateRoute>
-            <Medical_Report />
-          </PatientPrivateRoute>
-        ),
+        element: <Medical_Report />,
       },
       {
         path: "/patient/myappointment",
-        element: (
-          <PatientPrivateRoute>
-            <MyAppointment />
-          </PatientPrivateRoute>
-        ),
+        element: <MyAppointment />,
       },
     ],
   },
   {
     path: "/doctor",
-    element: (
-      <DoctorPrivateRoute>
-        <Doctor_LandingPage />{" "}
-      </DoctorPrivateRoute>
-    ),
+    element: <Doctor_LandingPage />,
     children: [
       {
         path: "/doctor",
-        element: (
-          <DoctorPrivateRoute>
-            <Appointments />{" "}
-          </DoctorPrivateRoute>
-        ),
+        element: <Appointments />,
       },
       {
         path: "/doctor/profile",
-        element: (
-          <DoctorPrivateRoute>
-            <Doctor_profile />
-          </DoctorPrivateRoute>
-        ),
+        element: <Doctor_profile />,
       },
       {
         path: "/doctor/messages",
-        element: (
-          <DoctorPrivateRoute>
-            <MessengerDoctor />
-          </DoctorPrivateRoute>
-        ),
+        element: <Messenger />,
       },
       {
         path: "/doctor/medicalrecords",
-        element: (
-          <DoctorPrivateRoute>
-            <Medical_Records />
-          </DoctorPrivateRoute>
-        ),
+        element: <Medical_Records />,
       },
       {
         path: "/doctor/confirmappointment",
-        element: (
-          <DoctorPrivateRoute>
-            <Confirmed_Appointments />
-          </DoctorPrivateRoute>
-        ),
+        element: <Confirmed_Appointments />,
       },
     ],
   },
@@ -148,12 +94,8 @@ const router = createBrowserRouter([
     element: <Patient_Registration />,
   },
   {
-    path: "/patient-login",
-    element: <PatientLogin />,
-  },
-  {
-    path: "/doctor-login",
-    element: <DoctorLogin />,
+    path: "/Login",
+    element: <Login />,
   },
 ]);
 
