@@ -1,5 +1,5 @@
-# React + Vite
-
+# React + Vite 3rd projet with clien
+Host-- https://doctor-patient-host.vercel.app/
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
